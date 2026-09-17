@@ -1,0 +1,339 @@
+.dashboard-sidebar {
+  width: 270px;
+  background: #ffffff;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 170vh;
+  overflow-y: visible;
+  left: 0;
+  top: 0;
+  transition: width 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed {
+  width: 80px;
+}
+
+.dark .dashboard-sidebar, .dashboard.dark .dashboard-sidebar {
+  background: #2d2d2d;
+}
+
+.dashboard-sidebar-header {
+  padding: 1.5rem 1.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark .dashboard-sidebar-header {
+  border-bottom-color: #404040;
+}
+
+.dashboard-logo {
+  display: block;
+}
+
+.dashboard-sidebar-logo-img {
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-left: 0;
+  margin-bottom: 12px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-sidebar-logo-img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+
+.dashboard-sidebar-toggle {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-sidebar-toggle:hover {
+  background: #f8f9fa;
+  color: #009966;
+}
+
+.dashboard-toggle-icon {
+  font-weight: bold;
+}
+
+.dashboard-search-container {
+  padding: 1.5rem 1.25rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-search-container {
+  padding: 1rem 0.75rem;
+}
+
+.dashboard-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #D7D7D7;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-search-box {
+  padding: 10px;
+  justify-content: center;
+}
+
+.dark .dashboard-search-box {
+  background: #404040;
+}
+
+.dashboard-search-icon {
+  margin-right: 10px;
+  color: #6c757d;
+  font-size: 16px;
+  position: absolute;
+  left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-search-icon {
+  position: static;
+  margin-right: 0;
+}
+
+.dashboard-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-search-box input {
+  display: none;
+}
+
+.dark .dashboard-search-box input {
+  color: #ffffff;
+  background: #404040;
+  border-color: #555;
+}
+
+.dashboard-sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.dashboard-nav-item {
+  width: 94%;
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.25rem;
+  margin: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dashboard-sidebar.collapsed .dashboard-nav-item {
+  padding: 0.75rem;
+  justify-content: center;
+  margin: 0.5rem 0.75rem;
+}
+
+.dashboard-nav-item:hover {
+  background: #f8f9fa;
+}
+
+.dark .dashboard-nav-item:hover, .dashboard.dark .dashboard-nav-item:hover {
+  background: #404040;
+}
+
+.dashboard-nav-item.active {
+  background: #009966;
+  color: #ffffff;
+}
+
+.dashboard-nav-icon {
+  margin-right: 0.875rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-nav-icon {
+  margin-right: 0;
+}
+
+.dashboard-nav-label {
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-nav-label {
+  display: none;
+}
+
+.dark .dashboard-sidebar-footer {
+  border-top-color: #404040;
+}
+
+.dashboard-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin: 0 1rem;
+  border-radius: 8px;
+}
+
+.dashboard-sidebar.collapsed .dashboard-logout-btn {
+  padding: 0.75rem;
+  justify-content: center;
+  margin: 0 0.75rem;
+}
+
+.dashboard-logout-btn:hover {
+  background: #f8f9fa;
+  color: #009966;
+}
+
+.dark .dashboard-logout-btn, .dashboard.dark .dashboard-logout-btn {
+  color: #cccccc;
+}
+
+.dark .dashboard-logout-btn:hover, .dashboard.dark .dashboard-logout-btn:hover {
+  background: #404040;
+  color: #009966;
+}
+
+.dashboard-logout-icon {
+  margin-right: 0.875rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-logout-icon {
+  margin-right: 0;
+}
+
+.dashboard-logout-text {
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar.collapsed .dashboard-logout-text {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-sidebar {
+    width: 80px;
+  }
+  
+  .dashboard-sidebar-header {
+    padding: 1rem 0.75rem;
+    justify-content: center;
+  }
+  
+  .dashboard-sidebar-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .dashboard-search-container {
+    padding: 1rem 0.75rem;
+  }
+  
+  .dashboard-search-box {
+    padding: 10px;
+    justify-content: center;
+  }
+  
+  .dashboard-search-box input {
+    display: none;
+  }
+  
+  .dashboard-search-icon {
+    position: static;
+    margin-right: 0;
+  }
+  
+  .dashboard-nav-item {
+    padding: 0.75rem;
+    justify-content: center;
+    margin: 0.5rem 0.75rem;
+  }
+  
+  .dashboard-nav-icon {
+    margin-right: 0;
+  }
+  
+  .dashboard-nav-label {
+    display: none;
+  }
+  
+  .dashboard-logout-btn {
+    padding: 0.75rem;
+    justify-content: center;
+    margin: 0 0.75rem;
+  }
+  
+  .dashboard-logout-icon {
+    margin-right: 0;
+  }
+  
+  .dashboard-logout-text {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    width: 60px;
+  }
+  
+  .dashboard-sidebar-logo-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .dashboard-nav-item {
+    margin: 0.5rem 0.5rem;
+  }
+  
+  .dashboard-logout-btn {
+    margin: 0 0.5rem;
+  }
+}

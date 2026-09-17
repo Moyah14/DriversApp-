@@ -1,0 +1,32 @@
+{
+  "name": "plateau-fleet-api",
+  "version": "1.0.0",
+  "description": "Multi-tenant transit/fleet management API with PostgreSQL RLS",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "node src/db/migrate.js",
+    "seed": "node src/db/seed.js",
+    "generate:telemetry": "node src/scripts/generateTelemetry.js",
+    "test:isolation": "node src/scripts/testIsolation.js",
+    "test:load": "node src/scripts/testLoad.js",
+    "demo:walkthrough": "node src/scripts/demoWalkthrough.js",
+    "test:evidence": "node src/scripts/testIsolation.js && node src/scripts/generateTelemetry.js 30 && node src/scripts/testLoad.js 20 200"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.12.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

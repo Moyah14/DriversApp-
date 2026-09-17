@@ -1,0 +1,237 @@
+/* Global font family for AddDriverModal */
+* {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.add-driver-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .add-driver-content {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 32px 32px 32px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    position: relative;
+    animation: modalIn 0.2s cubic-bezier(.4,0,.2,1);
+  }
+  
+  @keyframes modalIn {
+    from { transform: translateY(40px) scale(0.98); opacity: 0; }
+    to { transform: none; opacity: 1; }
+  }
+  
+  .add-driver-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #f5f5f5;
+    font-size: 20px;
+    cursor: pointer;
+    color: #646464;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .add-driver-close:hover {
+    color: #009966;
+  }
+  
+  /* Header icon and stepper */
+  .add-driver-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .add-driver-icon {
+    background: #009966;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 32px;
+  }
+  .add-driver-stepper {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   
+  }
+  
+  .add-driver-title {
+    margin: 24px 0 16px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .add-driver-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .add-driver-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .add-driver-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .add-driver-col label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #222;
+  }
+  .add-driver-col input[type="text"] {
+    width: 90%;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background:white;
+    margin-top: 2px;
+    transition: border 0.15s;
+  }
+  .add-driver-col input[type="text"]:focus {
+    border: 1.5px solid #009966;
+    outline: none;
+  }
+  
+  .add-driver-upload-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #222;
+    display: block;
+  }
+  .add-driver-upload-box {
+    border: 1.5px dashed #E3E3E3;
+    border-radius: 12px;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    background: #F4F4F4;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .add-driver-upload-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .add-driver-upload-info {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 0.98rem;
+  }
+  .add-driver-upload-filename {
+    color: #009966;
+    font-size: 0.98rem;
+    margin-top: 4px;
+  }
+  .add-driver-browse-btn {
+    background: #009966;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 8px;
+    transition: background 0.15s;
+  }
+  .add-driver-browse-btn:hover {
+    background: #007a52;
+  }
+  
+  .add-driver-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .add-driver-cancel {
+    background: none;
+    border: none;
+    color: #009966;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.15s;
+  }
+  .add-driver-cancel:hover {
+    color: #007a52;
+  }
+  .add-driver-submit {
+    background: #009966;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 32px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .add-driver-submit:hover {
+    background: #007a52;
+  }
+  
+  .add-driver-stepper-container {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .add-driver-stepper-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .add-driver-stepper-text {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    line-height: 1;
+    left: 40px;
+  }
+
+hr{
+  border: 1px solid #F0F0F0;
+  margin-bottom: 30px;
+}
+
+.Skip{
+  position: relative;
+  left: 90px;
+}

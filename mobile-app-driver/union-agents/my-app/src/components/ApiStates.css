@@ -1,0 +1,21 @@
+# Empty / error state helpers for API-backed pages
+.api-empty-state,
+.api-error-state {
+  padding: 1.25rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  margin: 0.75rem 0;
+}
+
+.api-empty-state {
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+  text-align: center;
+}
+
+.api-error-state {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}

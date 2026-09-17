@@ -1,0 +1,20 @@
+{
+  "runAt": "2026-09-17T19:29:20.751Z",
+  "concurrency": 20,
+  "totalRequests": 200,
+  "errors": 0,
+  "errorRatePct": 0,
+  "elapsedSec": 3.652,
+  "throughputReqPerSec": 54.76,
+  "latencyMs": {
+    "p50": 325.62,
+    "p95": 648.18,
+    "p99": 1054.2,
+    "avg": 359.96,
+    "max": 1158.01
+  },
+  "targets": {
+    "p95Under50ms": false,
+    "throughputOver100": false
+  }
+}

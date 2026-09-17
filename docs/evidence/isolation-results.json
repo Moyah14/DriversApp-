@@ -1,0 +1,66 @@
+{
+  "runAt": "2026-09-17T19:25:52.268Z",
+  "api": "http://localhost:4000",
+  "cases": [
+    {
+      "id": "TC-AUTH-01",
+      "name": "Valid logins succeed",
+      "ok": true,
+      "message": "admin=200 t1=200 t2=200 driver=200"
+    },
+    {
+      "id": "TC-AUTH-02",
+      "name": "Invalid password rejected",
+      "ok": true,
+      "message": "status=401"
+    },
+    {
+      "id": "TC-RL-01a",
+      "name": "Each tenant sees only own vehicles (non-empty scoped lists)",
+      "ok": true,
+      "message": "t1=3 t2=3 overlap=0"
+    },
+    {
+      "id": "TC-RL-01",
+      "name": "Cross-tenant telemetry read returns empty (RLS)",
+      "ok": true,
+      "message": "status=200 rows=0"
+    },
+    {
+      "id": "TC-RL-02",
+      "name": "Tampered payload tenant_id ignored; record under session tenant",
+      "ok": true,
+      "message": "status=201 savedTenant=14333c03-01da-4dc3-a924-96c50530e277 expected=14333c03-01da-4dc3-a924-96c50530e277"
+    },
+    {
+      "id": "TC-RB-01",
+      "name": "Driver blocked from tenant provisioning",
+      "ok": true,
+      "message": "status=403"
+    },
+    {
+      "id": "TC-RB-02",
+      "name": "Invalid JWT rejected",
+      "ok": true,
+      "message": "status=401"
+    },
+    {
+      "id": "TC-UT-02",
+      "name": "Speeding telemetry classified / ingested",
+      "ok": true,
+      "message": "status=201 event=speeding penalty=10"
+    },
+    {
+      "id": "TC-AN-01",
+      "name": "Driver scorecards readable after telemetry",
+      "ok": true,
+      "message": "count=3"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "allPassed": true
+  }
+}

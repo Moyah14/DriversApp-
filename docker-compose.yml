@@ -1,0 +1,64 @@
+services:
+  db:
+    image: postgres:16.2
+    container_name: plateau-fleet-db
+    environment:
+      POSTGRES_USER: fleet
+      POSTGRES_PASSWORD: fleetsecret
+      POSTGRES_DB: fleet_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - fleet_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fleet -d fleet_platform"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    container_name: plateau-fleet-api
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql://fleet_app:fleetsecret@db:5432/fleet_platform
+      MIGRATE_DATABASE_URL: postgresql://fleet:fleetsecret@db:5432/fleet_platform
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  admin-portal:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./admin-portal:/app
+    command: sh -c "npm install && PORT=3000 REACT_APP_API_URL=http://localhost:4000 npm start"
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=3000
+    depends_on:
+      - api
+
+  tenant-portal:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./mobile-app-driver/union-agents/my-app:/app
+    command: sh -c "npm install && PORT=3001 REACT_APP_API_URL=http://localhost:4000 BROWSER=none npm start"
+    ports:
+      - "3001:3001"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=3001
+      - PORT=3001
+    depends_on:
+      - api
+
+volumes:
+  fleet_pgdata:

@@ -1,0 +1,119 @@
+.login-bg {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #a8e063 0%, #e0eafc 50%, #56ab2f 100%);
+  }
+  
+  .login-container {
+    background: #fff;
+    border-radius: 16px; /* Further reduced from 20px for 70% appearance */
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 28px 24px 24px 24px; /* Further reduced from 32px 28px 28px 28px */
+    width: 100%;
+    max-width: 360px; /* Further reduced from 380px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-logo {
+    width: 64px; /* Further reduced from 72px */
+    height: 64px; /* Further reduced from 72px */
+    margin-bottom: 12px; /* Further reduced from 14px */
+  }
+  
+  .login-title {
+    font-size: 1.6rem; /* Further reduced from 1.8rem */
+    font-weight: bold;
+    margin-bottom: 5px; /* Further reduced from 6px */
+    text-align: center;
+  }
+  
+  .login-subtitle {
+    color: #666;
+    margin-bottom: 18px; /* Further reduced from 20px */
+    text-align: center;
+  }
+  
+  .login-field {
+    width: 100%;
+    margin-bottom: 12px; /* Further reduced from 14px */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-field label {
+    margin-bottom: 3px; /* Further reduced from 4px */
+    color: #222;
+    font-weight: 500;
+  }
+  
+  .login-field input {
+    padding: 6px 8px; /* Further reduced from 8px 10px */
+    border: 1px solid #d1d5db;
+    border-radius: 4px; /* Further reduced from 5px */
+    font-size: 0.9rem; /* Further reduced from 0.95rem */
+    outline: none;
+    transition: border 0.2s;
+  }
+  
+  .login-field input:focus {
+    border-color: #56ab2f;
+  }
+  
+  .login-password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .login-password-wrapper input {
+    flex: 1;
+  }
+  
+  .login-password-toggle {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 6px; /* Further reduced from 8px */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1rem; /* Further reduced from 1.1rem */
+    color: #888;
+  }
+  
+  .login-forgot {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 18px; /* Further reduced from 20px */
+  }
+  
+  .login-forgot a {
+    color: #219150;
+    text-decoration: none;
+    font-size: 0.9rem; /* Further reduced from 0.95rem */
+  }
+  
+  .login-forgot a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 8px 0; /* Further reduced from 10px */
+    background: linear-gradient(to right, #219150, #56ab2f);
+    color: #fff;
+    font-size: 0.9rem; /* Further reduced from 1rem */
+    font-weight: 600;
+    border: none;
+    border-radius: 5px; /* Further reduced from 6px */
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(to right, #1e7e44, #469a27);
+  }

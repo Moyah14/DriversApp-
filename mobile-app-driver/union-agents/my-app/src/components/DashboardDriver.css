@@ -1,0 +1,311 @@
+/* Add Driver Modal Styles */
+
+@keyframes driverFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes driverSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.driver-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: driverFadeIn 0.3s ease-out;
+}
+
+.driver-modal-container {
+  background: white;
+  border-radius: 10px; /* Further reduced from 12px for 70% appearance */
+  width: 90%;
+  max-width: 520px; /* Further reduced from 560px */
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: driverSlideIn 0.3s ease-out;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Modal Header */
+.driver-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 18px 0 18px; /* Further reduced from 20px */
+}
+
+.driver-icon-header {
+  padding: 8px; /* Further reduced from 10px */
+  background-color: #00C37E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Further reduced from 44px */
+  height: 40px; /* Further reduced from 44px */
+}
+
+.driver-icon-img {
+  width: 18px; /* Further reduced from 20px */
+  height: 18px; /* Further reduced from 20px */
+  filter: brightness(0) invert(1);
+}
+
+.driver-close-button {
+  background: none;
+  border: none;
+  font-size: 18px; /* Further reduced from 20px */
+  cursor: pointer;
+  color: #666;
+  padding: 5px; /* Further reduced from 6px */
+  border-radius: 50%;
+  width: 32px; /* Further reduced from 36px */
+  height: 32px; /* Further reduced from 36px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.driver-close-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Modal Content */
+.driver-modal-content {
+  padding: 20px; /* Reduced from 24px */
+}
+
+.driver-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Reduced from 24px */
+}
+
+.driver-modal-title {
+  font-size: 18px; /* Reduced from 20px */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.driver-progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; /* Reduced from 32px */
+  height: 28px; /* Reduced from 32px */
+}
+
+.driver-progress-icon-img {
+  width: 28px; /* Reduced from 32px */
+  height: 28px; /* Reduced from 32px */
+}
+
+/* Add Driver Form */
+.driver-form {
+  margin-bottom: 20px; /* Reduced from 24px */
+}
+
+.driver-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* Reduced from 16px */
+  margin-bottom: 12px; /* Reduced from 16px */
+}
+
+.driver-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-form-label {
+  font-size: 13px; /* Reduced from 14px */
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px; /* Reduced from 8px */
+}
+
+.driver-form-input {
+  padding: 10px 14px; /* Reduced from 12px 16px */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px; /* Reduced from 8px */
+  font-size: 13px; /* Reduced from 14px */
+  color: #333;
+  background-color: white;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.driver-form-input:focus {
+  border-color: #00C37E;
+  box-shadow: 0 0 0 3px rgba(0, 195, 126, 0.1);
+}
+
+.driver-form-input::placeholder {
+  color: #999;
+}
+
+/* Upload Section */
+.driver-upload-section {
+  margin-bottom: 20px; /* Reduced from 24px */
+}
+
+.driver-upload-area {
+  border: 2px dashed #e0e0e0;
+  border-radius: 10px; /* Reduced from 12px */
+  padding: 24px; /* Reduced from 32px */
+  text-align: center;
+  background-color: #fafafa;
+  transition: border-color 0.2s ease;
+}
+
+.driver-upload-area:hover {
+  border-color: #00C37E;
+}
+
+.driver-upload-icon {
+  margin-bottom: 12px; /* Reduced from 16px */
+  display: flex;
+  justify-content: center;
+}
+
+.driver-upload-icon-img {
+  width: 44px; /* Reduced from 48px */
+  height: 44px; /* Reduced from 48px */
+}
+
+.driver-upload-text {
+  font-size: 13px; /* Reduced from 14px */
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.driver-browse-button {
+  background-color: #00C37E;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.driver-browse-button:hover {
+  background-color: #00a86b;
+}
+
+.driver-selected-file {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #00C37E;
+  font-weight: 500;
+}
+
+/* Modal Actions */
+.driver-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.driver-action-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.driver-action-button.driver-cancel {
+  background: none;
+  color: #00C37E;
+  border: none;
+  text-decoration: underline;
+  padding: 12px 0;
+}
+
+.driver-action-button.driver-cancel:hover {
+  background: none;
+  color: #00a86b;
+  text-decoration: underline;
+}
+
+.driver-action-button.driver-add {
+  background-color: #00C37E;
+  color: white;
+  border: 1px solid #00C37E;
+}
+
+.driver-action-button.driver-add:hover {
+  background-color: #00a86b;
+  border-color: #00a86b;
+}
+
+.driver-action-button.driver-add:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .driver-modal-container {
+    width: 95%;
+    margin: 20px;
+  }
+
+  .driver-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .driver-modal-content {
+    padding: 16px;
+  }
+
+  .driver-modal-header {
+    padding: 16px 16px 0 16px;
+  }
+
+  .driver-upload-area {
+    padding: 24px 16px;
+  }
+
+  .driver-modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .driver-action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

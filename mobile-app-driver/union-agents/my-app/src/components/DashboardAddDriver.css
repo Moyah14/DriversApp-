@@ -1,0 +1,298 @@
+/* Add Driver Modal Overlay */
+.adddriver-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Add Driver Modal Container */
+.adddriver-modal-container {
+  background-color: white;
+  border-radius: 14px; /* Further reduced from 16px for 70% appearance */
+  padding: 0;
+  max-width: 480px; /* Further reduced from 520px */
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Add Driver Modal Header */
+.adddriver-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px; /* Further reduced from 24px */
+  margin-bottom: 6px; /* Further reduced from 8px */
+}
+
+.adddriver-icon-header {
+  padding: 10px; /* Further reduced from 12px */
+  background-color: #00C37E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; /* Further reduced from 48px */
+  height: 42px; /* Further reduced from 48px */
+}
+
+.adddriver-icon-img {
+  width: 20px; /* Further reduced from 24px */
+  height: 20px; /* Further reduced from 24px */
+  filter: brightness(0) invert(1);
+}
+
+.adddriver-bus-icon {
+  width: 20px; /* Further reduced from 24px */
+  height: 20px; /* Further reduced from 24px */
+}
+
+.adddriver-close-button {
+  background: none;
+  border: none;
+  font-size: 20px; /* Further reduced from 24px */
+  color: #666;
+  cursor: pointer;
+  padding: 3px; /* Further reduced from 4px */
+  border-radius: 3px; /* Further reduced from 4px */
+  transition: background-color 0.2s ease;
+  width: 28px; /* Further reduced from 32px */
+  height: 28px; /* Further reduced from 32px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adddriver-close-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add Driver Modal Content */
+.adddriver-modal-content {
+  padding: 0 24px 24px 24px;
+}
+
+/* Add Driver Title Section */
+.adddriver-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.adddriver-modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.adddriver-progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.adddriver-progress-icon-img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Add Driver Form */
+.adddriver-form {
+  margin-bottom: 24px;
+}
+
+.adddriver-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.adddriver-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.adddriver-form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.adddriver-form-input,
+.adddriver-form-select {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  transition: border-color 0.2s ease;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.adddriver-form-input:focus,
+.adddriver-form-select:focus {
+  border-color: #00C37E;
+  box-shadow: 0 0 0 3px rgba(0, 195, 126, 0.1);
+}
+
+.adddriver-form-input::placeholder {
+  color: #999;
+}
+
+.adddriver-form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.adddriver-form-select option {
+  color: #333;
+  background-color: white;
+  padding: 8px;
+}
+
+/* Add Driver Modal Actions */
+.adddriver-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.adddriver-action-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  min-width: 80px;
+}
+
+.adddriver-action-button.adddriver-previous {
+  background: none;
+  color: #666;
+  border: none;
+  text-decoration: underline;
+  padding: 12px 0;
+  margin-right: auto;
+}
+
+.adddriver-action-button.adddriver-previous:hover {
+  background: none;
+  color: #333;
+  text-decoration: underline;
+}
+
+.adddriver-action-button.adddriver-skip {
+  background: none;
+  color: #00C37E;
+  border: none;
+  text-decoration: underline;
+  padding: 12px 0;
+}
+
+.adddriver-action-button.adddriver-skip:hover {
+  background: none;
+  color: #00a86b;
+  text-decoration: underline;
+}
+
+.adddriver-action-button.adddriver-save {
+  background-color: #00C37E;
+  color: white;
+  border: 1px solid #00C37E;
+}
+
+.adddriver-action-button.adddriver-save:hover {
+  background-color: #00a86b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .adddriver-modal-container {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .adddriver-modal-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .adddriver-modal-header {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .adddriver-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .adddriver-modal-actions {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  
+  .adddriver-action-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .adddriver-action-button.adddriver-previous,
+  .adddriver-action-button.adddriver-skip {
+    padding: 12px 20px;
+  }
+}
+
+/* Animation */
+.adddriver-modal-overlay {
+  animation: adddriverFadeIn 0.3s ease;
+}
+
+.adddriver-modal-container {
+  animation: adddriverSlideIn 0.3s ease;
+}
+
+@keyframes adddriverFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes adddriverSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

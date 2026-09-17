@@ -1,0 +1,98 @@
+.header1 {
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+
+.header1.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-bottom-color: #404040;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #212529;
+}
+
+.header1.dark .header-title {
+  color: #ffffff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+
+.notifications {
+  position: relative;
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.notifications:hover {
+  background: #f8f9fa;
+}
+
+.header1.dark .notifications:hover {
+  background: #404040;
+}
+
+.notification-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Profile styles */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-avatar img {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.profile-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 0.625rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Profile avatar styling */
+.profile-avatar img {
+  border-radius: 50%;
+}

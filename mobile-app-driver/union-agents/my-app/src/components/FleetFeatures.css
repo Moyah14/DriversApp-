@@ -1,0 +1,249 @@
+.fleet-feature-page {
+  padding: 1.25rem 1.5rem 2rem;
+  max-width: 1100px;
+}
+
+.fleet-feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.fleet-feature-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  color: #111827;
+}
+
+.fleet-feature-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.fleet-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.fleet-form-card,
+.fleet-table-card,
+.live-card,
+.score-hero {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.fleet-form-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.fleet-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.fleet-form-card input,
+.fleet-form-card select {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.fleet-form-card button,
+.fleet-secondary-btn {
+  background: #009966;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.fleet-secondary-btn {
+  background: #111827;
+}
+
+.fleet-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.fleet-table-card th {
+  text-align: left;
+  color: #6b7280;
+  font-weight: 600;
+  padding: 0.55rem 0.4rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fleet-table-card td {
+  padding: 0.7rem 0.4rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+
+.muted {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.muted.small {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #f3f4f6;
+}
+
+.status-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-maintenance {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.score-badge {
+  display: inline-block;
+  min-width: 3rem;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.score-badge.low {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+
+.live-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.event-pill {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  text-transform: capitalize;
+}
+
+.event-speeding,
+.event-harsh_braking {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.event-normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.live-metrics {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.live-metrics span {
+  display: block;
+  color: #9ca3af;
+  font-size: 0.7rem;
+}
+
+.live-metrics strong {
+  font-size: 0.85rem;
+}
+
+.fleet-link-btn {
+  background: none;
+  border: none;
+  color: #009966;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.severity-high,
+.severity-critical {
+  color: #b91c1c;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.severity-medium {
+  color: #b45309;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.score-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.score-hero-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #009966;
+  line-height: 1.1;
+}
+
+.score-hero-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.score-hero-stats span {
+  display: block;
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.score-hero-stats strong {
+  font-size: 1.15rem;
+}

@@ -1,0 +1,303 @@
+/* Top-Up Modal Overlay */
+.topup-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Top-Up Modal Container */
+.topup-modal-container {
+  background-color: white;
+  border-radius: 14px; /* Further reduced from 16px for 70% appearance */
+  padding: 0;
+  max-width: 480px; /* Further reduced from 520px */
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Top-Up Modal Header */
+.topup-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px; /* Further reduced from 24px */
+  margin-bottom: 6px; /* Further reduced from 8px */
+}
+
+.topup-icon-header {
+  padding: 10px; /* Further reduced from 12px */
+  background-color: #00C37E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topup-icon-img {
+  width: 20px; /* Further reduced from 24px */
+  height: 20px; /* Further reduced from 24px */
+  filter: brightness(0) invert(1);
+}
+
+.topup-close-button {
+  background: none;
+  border: none;
+  font-size: 20px; /* Further reduced from 24px */
+  color: #666;
+  cursor: pointer;
+  padding: 3px; /* Further reduced from 4px */
+  border-radius: 3px; /* Further reduced from 4px */
+  transition: background-color 0.2s ease;
+  width: 28px; /* Further reduced from 32px */
+  height: 28px; /* Further reduced from 32px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topup-close-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Top-Up Modal Content */
+.topup-modal-content {
+  padding: 0 24px 24px 24px;
+}
+
+/* Top-Up Title Section */
+.topup-title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.topup-modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.topup-progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.topup-progress-icon-img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Top-Up Form */
+.topup-form {
+  margin-bottom: 24px;
+}
+
+.topup-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.topup-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.topup-amount-group {
+  max-width: 250px;
+}
+
+.topup-form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.topup-form-input {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.topup-form-input:focus {
+  border-color: #00C37E;
+  box-shadow: 0 0 0 3px rgba(0, 195, 126, 0.1);
+}
+
+.topup-form-input::placeholder {
+  color: #999;
+}
+
+/* Input with Verify Button */
+.topup-input-with-verify {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.topup-input-with-verify .topup-form-input {
+  flex: 1;
+  padding-right: 90px;
+}
+
+.topup-verify-button {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #00C37E;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  text-decoration: underline;
+}
+
+.topup-verify-button:hover {
+  background-color: #f0f9f6;
+}
+
+/* Driver Name Input */
+.topup-driver-name {
+  background-color: #f8f9fa;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Amount Input */
+.topup-amount-input {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Top-Up Modal Actions */
+.topup-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.topup-action-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  min-width: 80px;
+}
+
+.topup-action-button.topup-cancel {
+  background: none;
+  color: #00C37E;
+  border: none;
+  text-decoration: underline;
+  padding: 12px 0;
+}
+
+.topup-action-button.topup-cancel:hover {
+  background: none;
+  color: #00a86b;
+  text-decoration: underline;
+}
+
+.topup-action-button.topup-next {
+  background-color: #00C37E;
+  color: white;
+  border: 1px solid #00C37E;
+}
+
+.topup-action-button.topup-next:hover {
+  background-color: #00a86b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .topup-modal-container {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .topup-modal-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .topup-modal-header {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .topup-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .topup-modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .topup-action-button {
+    width: 100%;
+  }
+  
+  .topup-amount-group {
+    max-width: 100%;
+  }
+}
+
+/* Animation */
+.topup-modal-overlay {
+  animation: topupFadeIn 0.3s ease;
+}
+
+.topup-modal-container {
+  animation: topupSlideIn 0.3s ease;
+}
+
+@keyframes topupFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes topupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,807 @@
+/* Global font family for all accounts page elements */
+* {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Accounts Page Styles */
+.accounts-manager {
+  display: flex;
+  
+  background-color: #f8f9fa;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ 
+  transform-origin: top left;
+  height: 100vh;
+  width: 100vw; /* Compensate for scale (100/0.67) */
+  
+}
+
+/* Accounts page now uses its own sidebar component */
+
+.accounts-manager.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Main Content Styles */
+.accounts-main-wrapper {
+  flex: 1;
+  margin-left: 280px; /* Same as dashboard sidebar width */
+  padding: 24px;
+  background: #f8f9fa;
+
+  overflow-x: hidden;
+  transform: scale(0.75);
+  transform-origin: top left;
+  width: 108vw; 
+  position: absolute;
+  left: -92px;
+  
+
+}
+
+.dark .accounts-main-wrapper {
+  background: #1a1a1a;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dark .header {
+  background: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.dark .header-title {
+  color: #ffffff;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  color: #6c757d;
+}
+
+.dark .theme-toggle {
+  color: #cccccc;
+}
+
+.theme-toggle:hover {
+  background: #f8f9fa;
+}
+
+.dark .theme-toggle:hover {
+  background: #404040;
+}
+
+.notifications {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon {
+  font-size: 20px;
+  color: #6c757d;
+}
+
+.dark .notification-icon {
+  color: #cccccc;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: #dc3545;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #212529;
+}
+
+.dark .profile-name {
+  color: #ffffff;
+}
+
+.profile-email {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.dark .profile-email {
+  color: #cccccc;
+}
+
+/* Accounts Content Styles */
+.accounts-main-content {
+
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+/* Controls Row: Tabs + Filter + Download */
+.accounts-controls-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.accounts-tab-navigation {
+  display: flex;
+  background: #f0f0f0;
+  border-radius: 25px;
+  border: none;
+  box-shadow: none;
+  padding: 3px;
+  height: 40px;
+  align-items: center;
+  position: relative;
+}
+
+.dark .accounts-tab-navigation {
+  background: #404040;
+}
+
+.accounts-tab-btn {
+  flex: 1;
+  padding: 0 24px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dark .accounts-tab-btn {
+  color: #cccccc;
+}
+
+.accounts-tab-active {
+  background: #009966;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 153, 102, 0.2);
+  transform: scale(1.02);
+}
+
+.accounts-tab-btn:not(.accounts-tab-active):hover {
+  background: rgba(0, 153, 102, 0.1);
+  color: #009966;
+}
+
+.dark .accounts-tab-btn:not(.accounts-tab-active):hover {
+  background: rgba(0, 153, 102, 0.2);
+  color: #ffffff;
+}
+
+.accounts-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.accounts-filter-button, .accounts-download-button {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.dark .accounts-filter-button, .dark .accounts-download-button {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+.filter-btn:hover, .download-btn:hover {
+  background: #f8f9fa;
+  color: #009966;
+  border-color: #009966;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.dark .accounts-filter-button:hover, .dark .accounts-download-button:hover {
+  background: #404040;
+  color: #ffffff;
+  border-color: #009966;
+}
+
+.accounts-download-button {
+  background: #009966 !important;
+  color: #fff !important;
+  border: 1px solid #009966 !important;
+  box-shadow: 0 1px 3px rgba(0, 153, 102, 0.2);
+}
+
+.download-btn:hover {
+  background: #008055;
+  color: #fff;
+  border-color: #008055;
+  box-shadow: 0 2px 6px rgba(0, 153, 102, 0.3);
+}
+
+/* Statistics Cards */
+.accounts-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.accounts-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dark .accounts-stat-card {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+.accounts-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accounts-stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accounts-stat-label {
+  font-size: 13px;
+  color: #6c757d;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+.accounts-stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.dark .accounts-stat-number {
+  color: #ffffff;
+}
+
+.accounts-stat-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.accounts-stat-decoration {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 153, 102, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.accounts-filter-button, .accounts-download-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.dark .accounts-filter-button, .dark .accounts-download-button {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+.filter-btn:hover, .download-btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dark .accounts-filter-button:hover, .dark .accounts-download-button:hover {
+  background: #404040;
+}
+
+.accounts-download-button {
+  background: #009966;
+  color: white;
+  border-color: #009966;
+  box-shadow: 0 2px 8px rgba(0, 153, 102, 0.2);
+}
+
+.download-btn:hover {
+  background: #008055;
+  box-shadow: 0 4px 12px rgba(0, 153, 102, 0.3);
+}
+
+/* Table Section */
+.accounts-data-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: visible;
+  border: 1px solid #f0f0f0;
+}
+
+.dark .accounts-data-section {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+.accounts-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  
+}
+
+.dark .accounts-table-header {
+  border-bottom-color: #404040;
+  background: #333333;
+}
+
+.table-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+.dark .table-header h3 {
+  color: #ffffff;
+}
+
+.accounts-table-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.accounts-table-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+ border: 1px solid #EBEBEB;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.filter-control:hover {
+  background: #e5e5e5;
+}
+
+.filter-control img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.accounts-table-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #EBEBEB;
+  border-radius: 10px;
+  padding: 10px 16px;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.dark .accounts-table-search {
+  background: #404040;
+  border-color: #505050;
+}
+
+.accounts-search-icon1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.accounts-search-icon1 img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  color: #6c757d;
+}
+
+.search-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  color: #6c757d;
+}
+
+.table-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  width: 220px;
+  font-weight: 500;
+ 
+}
+
+.dark .table-search input {
+  color: #ffffff;
+}
+
+/* Table Styles */
+.accounts-table-wrapper {
+  overflow-x: auto;
+  padding: 5px 20px;
+}
+
+.accounts-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #F0F0F0 !important;
+  border-radius: 12px;
+}
+
+.accounts-data-table th {
+  background: #fafafa;
+  padding: 20px 20px;
+  text-align: left;
+ 
+  font-weight: 700;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #F0F0F0;
+  letter-spacing: 0.1px;
+}
+
+.dark .accounts-data-table th {
+  background: #333333;
+  color: #ffffff;
+  border-bottom-color: #404040;
+  
+}
+
+.accounts-data-table td {
+  padding: 24px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  
+}
+
+.dark .accounts-data-table td {
+  color: #ffffff;
+  border-bottom-color: #404040;
+}
+
+.accounts-data-table tbody tr {
+  background: white;
+}
+
+.accounts-data-table tbody tr:hover {
+  background: #f9fafb;
+  transition: background-color 0.2s ease;
+}
+
+.dark .accounts-data-table tbody tr:hover {
+  background: #404040;
+}
+
+.accounts-table-row-clickable {
+  transition: all 0.2s ease;
+}
+
+.accounts-table-row-clickable:hover {
+  background: #f0f8ff !important;
+}
+
+.dark .accounts-table-row-clickable:hover {
+  background: #2a4a6b !important;
+}
+
+.accounts-license-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+ 
+}
+
+.accounts-license-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.accounts-more-options {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6c757d;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+.more-options:hover {
+  background: #f8f9fa;
+}
+
+.dark .more-options:hover {
+  background: #404040;
+}
+
+/* Pagination */
+.accounts-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  flex-wrap: wrap;
+}
+
+.dark .accounts-pagination {
+  border-top-color: #404040;
+  background: #333333;
+}
+
+.accounts-pagination-btn {
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .accounts-pagination-btn {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+.accounts-pagination-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #009966;
+}
+
+.dark .accounts-pagination-btn:hover:not(:disabled) {
+  background: #404040;
+}
+
+.accounts-pagination-active {
+  background: #009966;
+  color: white;
+  border-color: #009966;
+}
+
+.accounts-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.accounts-pagination-ellipsis {
+  color: #6c757d;
+  padding: 0 8px;
+  font-weight: 500;
+}
+
+.accounts-pagination-goto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+  font-size: 13px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.accounts-pagination-goto select {
+  padding: 6px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dark .accounts-pagination-goto select {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+.accounts-goto-button {
+  padding: 6px 12px;
+  background: #009966;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.accounts-goto-button:hover {
+  background: #008055;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .accounts-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .accounts-table-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .table-search input {
+    width: 100%;
+  }
+  
+  .accounts-pagination {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .accounts-pagination-goto {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .accounts-controls-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .accounts-action-buttons {
+    justify-content: flex-start;
+  }
+  .accounts-tab-navigation {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
