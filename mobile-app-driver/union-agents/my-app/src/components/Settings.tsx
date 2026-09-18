@@ -1,17 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import {
-  FiUser,
-  FiLock,
-  FiHelpCircle,
-  FiTrash2,
-  FiSettings,
-  FiGrid,
-  FiUsers,
-  FiCreditCard,
-  FiLogOut,
-  FiEdit2,
-  FiSearch,
   FiSun,
   FiMoon,
 } from "react-icons/fi";

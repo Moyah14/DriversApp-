@@ -72,7 +72,7 @@ const Analytics: React.FC = () => {
   }, []);
 
   const CustomBar = (props: any) => {
-    const { fill, x, y, width, height, index } = props;
+    const { x, y, width, height, index } = props;
     const dataPoint = incomeData[index];
     const isHighlighted = dataPoint?.highlighted;
     
@@ -89,7 +89,7 @@ const Analytics: React.FC = () => {
   };
 
   const DriversCustomBar = (props: any) => {
-    const { fill, x, y, width, height, index } = props;
+    const { x, y, width, height, index } = props;
     const dataPoint = driversData[index];
     const type = dataPoint?.type;
     

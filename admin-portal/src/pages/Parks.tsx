@@ -15,7 +15,7 @@ type ParksProps = {
 
 const Parks: React.FC<ParksProps> = ({ searchModalOpen, setSearchModalOpen, searchValue, setSearchValue }) => {
   const [parks, setParks] = useState<any[]>([]);
-  const [areas, setAreas] = useState(defaultAreas);
+  const [areas, setAreas] = useState<string[]>(defaultAreas);
   const [selectedArea, setSelectedArea] = useState(defaultAreas[0]);
   const [filterDropdown, setFilterDropdown] = useState(false);
   const [addModalOpen, setAddModalOpen] = useState(false);
@@ -32,13 +32,13 @@ const Parks: React.FC<ParksProps> = ({ searchModalOpen, setSearchModalOpen, sear
       .then((rows) => {
         const mapped = (rows || []).map(mapParkRow);
         setParks(mapped);
-        const fromApi = Array.from(
+        const fromApi: string[] = Array.from(
           new Set(
             mapped
-              .map((p: any) => p.area)
-              .filter((a: string): a is string => Boolean(a) && a !== "—")
+              .map((p: { area?: string }) => p.area || "")
+              .filter((a: string) => a.length > 0 && a !== "—")
           )
-        ) as string[];
+        );
         setAreas(["All Areas", ...fromApi, ...defaultAreas.filter((a) => a !== "All Areas" && !fromApi.includes(a))]);
       })
       .catch(() => setParks([]));

@@ -1,0 +1,9 @@
+﻿{
+  "eslint.workingDirectories": [
+    "admin-portal",
+    "mobile-app-driver/union-agents/my-app",
+    "mobile-app-driver/union-heads/Frontend/my-app"
+  ],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "mobile-app-driver/union-agents/my-app/node_modules/typescript/lib"
+}

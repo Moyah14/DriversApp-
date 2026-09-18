@@ -1,36 +1,53 @@
 import React from "react";
 import "./AccountsTwo.css";
 import { FiX, FiEye, FiDownload, FiTrash2 } from "react-icons/fi";
+
 const CloseIcon = FiX as unknown as React.ComponentType;
 const EyeIcon = FiEye as unknown as React.ComponentType;
 const DownloadIcon = FiDownload as unknown as React.ComponentType;
 const TrashIcon = FiTrash2 as unknown as React.ComponentType;
 
-const driver = {
-  name: "Peter Jackson",
-  phone: "07034567390",
-  address: "No 15, Olaiya street, johnson road, Plateau",
-  nin: "16923457120",
-  dateRegistered: "26 June, 2025",
-  registeredBy: "Agent 1",
-  status: "Active",
-  cardBalance: "₦250,700.00",
-  plateNumber: "KJA145CK",
-  vehicleType: "Bus (Danfo)",
-  route: "Abuja → Lagos",
-  park: "Rose Park Bus Stop",
-  document: {
-    name: "Drivers License",
-    file: "IMG 3456.jpg",
-    size: "2.65 MB",
-  },
+export type AccountDetails = {
+  name: string;
+  phoneNumber: string;
+  residentialAddress: string;
+  nin: string;
+  driversLicense: string;
 };
 
-const AccountsTwo: React.FC = () => {
+type AccountsTwoProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  account?: AccountDetails | null;
+};
+
+const AccountsTwo: React.FC<AccountsTwoProps> = ({ isOpen, onClose, account }) => {
+  if (!isOpen) return null;
+
+  const driver = {
+    name: account?.name || "—",
+    phone: account?.phoneNumber || "—",
+    address: account?.residentialAddress || "—",
+    nin: account?.nin || "—",
+    dateRegistered: "—",
+    registeredBy: "—",
+    status: "Active",
+    cardBalance: "—",
+    plateNumber: "—",
+    vehicleType: "—",
+    route: "—",
+    park: "—",
+    document: {
+      name: "Drivers License",
+      file: account?.driversLicense || "—",
+      size: "—",
+    },
+  };
+
   return (
-    <div className="account-details-overlay">
-      <div className="account-details-drawer">
-        <button className="ad-close-btn">
+    <div className="account-details-overlay" onClick={onClose}>
+      <div className="account-details-drawer" onClick={(e) => e.stopPropagation()}>
+        <button className="ad-close-btn" onClick={onClose} type="button">
           <CloseIcon />
         </button>
         <h2 className="ad-title">Account Details</h2>
@@ -101,9 +118,9 @@ const AccountsTwo: React.FC = () => {
               </div>
             </div>
             <div className="ad-doc-actions">
-              <button title="View"><EyeIcon /></button>
-              <button title="Download"><DownloadIcon /></button>
-              <button title="Delete"><TrashIcon /></button>
+              <button title="View" type="button"><EyeIcon /></button>
+              <button title="Download" type="button"><DownloadIcon /></button>
+              <button title="Delete" type="button"><TrashIcon /></button>
             </div>
           </div>
         </div>

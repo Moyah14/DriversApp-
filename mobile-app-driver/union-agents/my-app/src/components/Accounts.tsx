@@ -8,6 +8,7 @@ import downloadIcon from '../Media/download-04.png';
 import imgLogo from '../Media/Group 921.png';
 import search from '../Media/search-02.png';
 import { api } from '../api/client';
+import AccountsTwo from './AccountsTwo';
 
 
 interface Account {
@@ -57,17 +58,6 @@ const Accounts: React.FC = () => {
   const startIndex = (currentPage - 1) * accountsPerPage;
   const endIndex = startIndex + accountsPerPage;
   const currentAccounts = filteredAccounts.slice(startIndex, endIndex);
-
-  const handleRowClick = (account: Account) => {
-    setSelectedAccount(account);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedAccount(null);
-  };
-
 
   return (
     <div className={`accounts-manager${darkMode ? ' dark' : ''}`}>
@@ -288,7 +278,14 @@ const Accounts: React.FC = () => {
           </div>
         </div>
       </main>
-
+      <AccountsTwo
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedAccount(null);
+        }}
+        account={selectedAccount}
+      />
     </div>
   );
 };

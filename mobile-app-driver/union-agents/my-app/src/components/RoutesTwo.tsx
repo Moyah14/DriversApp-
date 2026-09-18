@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiX, FiMapPin, FiUser, FiCalendar, FiUserCheck } from 'react-icons/fi';
+import { FiX } from 'react-icons/fi';
 import linkForwardIcon from '../Media/link-forward.png';
 import './RoutesTwo.css';
 const CloseIcon = FiX as unknown as React.ComponentType;

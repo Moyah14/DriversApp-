@@ -14,13 +14,12 @@ type RoutesProps = {
 };
 
 const Routes: React.FC<RoutesProps> = ({ searchModalOpen, setSearchModalOpen, searchValue, setSearchValue }) => {
-  const [areas, setAreas] = useState(defaultAreas);
+  const [areas, setAreas] = useState<string[]>(defaultAreas);
   const [selectedArea, setSelectedArea] = useState(defaultAreas[0]);
   const [filterDropdown, setFilterDropdown] = useState(false);
   const [addModalOpen, setAddModalOpen] = useState(false);
   const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false);
   const [selectedRoute, setSelectedRoute] = useState<any | null>(null);
-  const [mapError, setMapError] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sidebarHovered, setSidebarHovered] = useState(false);
   const [routes, setRoutes] = useState<any[]>([]);
@@ -37,13 +36,13 @@ const Routes: React.FC<RoutesProps> = ({ searchModalOpen, setSearchModalOpen, se
       .then((rows) => {
         const mapped = (rows || []).map(mapRouteRow);
         setRoutes(mapped);
-        const fromApi = Array.from(
+        const fromApi: string[] = Array.from(
           new Set(
             mapped
-              .map((r: any) => r.area)
-              .filter((a: string): a is string => Boolean(a) && a !== "—")
+              .map((r: { area?: string }) => r.area || "")
+              .filter((a: string) => a.length > 0 && a !== "—")
           )
-        ) as string[];
+        );
         setAreas(["All Areas", ...fromApi, ...defaultAreas.filter((a) => a !== "All Areas" && !fromApi.includes(a))]);
       })
       .catch(() => setRoutes([]));

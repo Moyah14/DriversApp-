@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiSearch, FiMapPin, FiPlus, FiMinus, FiMaximize2 } from "react-icons/fi";
+import { FiPlus, FiMinus, FiMaximize2 } from "react-icons/fi";
 import Sidebar from "./Sidebar";
 import RoutesTwo from "./RoutesTwo";
 import mapImage from "../Media/image.png";
@@ -208,3 +208,4 @@ const Routes: React.FC = () => {
 };
 
 export default Routes;
+

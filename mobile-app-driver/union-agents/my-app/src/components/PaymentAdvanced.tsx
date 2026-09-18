@@ -9,6 +9,7 @@ import transactionButton from '../Media/Group 921.png';
 import profilePicture from '../Media/Profile Image.png'
 import { api } from '../api/client';
 import { mapPaymentRow } from '../utils/apiMappers';
+import TransactionDetail from './TransactionDetail';
 
 interface Transaction {
   id: string;
@@ -214,6 +215,14 @@ const Payments: React.FC = () => {
           </div>
         </div>
       </main>
+      <TransactionDetail
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedTransaction(null);
+        }}
+        transaction={selectedTransaction || undefined}
+      />
     </div>
   );
 };
